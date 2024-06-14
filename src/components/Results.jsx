@@ -3,6 +3,7 @@ import { calculateInvestmentResults, formatter } from '../util/investment.js';
 export default function Results({ investments }) {
   const results = calculateInvestmentResults(investments);
 
+
   function deriveFullResults(results) {
     const fullData = [];
     let totalInterest = 0;
@@ -21,7 +22,7 @@ export default function Results({ investments }) {
     return fullData;
   }
 
-  const fullResults = deriveFullResults(results, investments);
+  const fullResults = deriveFullResults(results);
   // console.log(fullResults);
 
   function displayInvestmentResult(year) {

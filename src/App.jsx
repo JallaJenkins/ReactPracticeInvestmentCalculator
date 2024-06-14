@@ -16,11 +16,10 @@ const INITIAL_INVESTMENT_STATE = {
 function App() {
 
   // TODO: Consolodate into one object ??
-  const [initialInvestment, setInitialInvestment] = useState(10000);
+  const [initialInvestment, setInitialInvestment] = useState(1000);
   const [annualInvestment, setAnnualInvestment] = useState(300);
   const [expectedReturn, setExpectedReturn] = useState(5.5);
   const [duration, setDuration] = useState(12);
-
 
   const investments = {
     initialInvestment: initialInvestment,
@@ -33,19 +32,19 @@ function App() {
 
   // TODO: Move functions and InputBoxes to UserInput ??
   function handleInitialInvestmentChange(event) {
-    setInitialInvestment(event.target.value);
+    setInitialInvestment(+event.target.value);
   }
 
   function handleAnnualInvestmentChange(event) {
-    setAnnualInvestment(event.target.value);
+    setAnnualInvestment(+event.target.value);
   }
 
   function handleExpectedReturnChange(event) {
-    setExpectedReturn(event.target.value);
+    setExpectedReturn(+event.target.value);
   }
 
   function handleDurationChange(event) {
-    setDuration(event.target.value);
+    setDuration(+event.target.value);
 
   }
 
@@ -63,8 +62,8 @@ function App() {
           <InputBox id="duration" label="Duration" defaultValue="12" value={duration} onChange={handleDurationChange} />
         </div>
       </div>
-      <Results investments={investments} />
-
+      <Results investments={investments}
+      />
     </>
   );
 }
