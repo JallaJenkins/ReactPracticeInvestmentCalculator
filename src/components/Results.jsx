@@ -1,8 +1,8 @@
 import { calculateInvestmentResults, formatter } from '../util/investment.js';
 
 export default function Results({ investments }) {
-  const results = calculateInvestmentResults(investments);
 
+  const results = calculateInvestmentResults(investments);
 
   function deriveFullResults(results) {
     const fullData = [];
